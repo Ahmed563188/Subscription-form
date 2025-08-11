@@ -73,6 +73,10 @@
             box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
         }
 
+        span {
+            color: rgb(5, 236, 5);
+        }
+
         @media (max-width: 500px) {
             .subscription-container form {
                 flex-direction: column;
