@@ -39,7 +39,7 @@
             flex-wrap: wrap;
         }
 
-        .subscription-container input[type="email"] {
+        .subscription-container input {
             flex: 1;
             min-width: 200px;
             padding: 12px 15px;

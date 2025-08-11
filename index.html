@@ -15,15 +15,25 @@
     <div class="subscription-container">
         <h2>Join Our Newsletter</h2>
         <p>Subscribe to get exclusive content and the latest updates delivered to your inbox.</p>
-        <form>
-            <input type="email" name="email" placeholder="Enter your email" required>
+        <form name="submit-to-google-sheet">
+            <input type="email" name="Email" placeholder="Enter your email" required>
+            <input type="number" name="Phone" placeholder="Enter your phone number" required>
             <button type="submit">Subscribe</button>
         </form>
     </div>
 
 
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzrn1p1ilnrat5eYm6LNji6tHafu1oVbJVVAfoOW-EJLF7DVsVp1KY4Fhc44bO_pclY/exec'
+        const form = document.forms['submit-to-google-sheet']
 
-    <script src="assets/script.js"></script>
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 
 </html>
